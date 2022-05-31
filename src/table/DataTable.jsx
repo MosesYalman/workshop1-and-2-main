@@ -14,7 +14,7 @@ export default function DataTable() {
     const [studentList] = useState(initialData);
     // showDetails state for displaying student details with a boolean,the button onclick function displayData returns a true value and the properties
     const [showDetails, setShowDetails] =useState(false);
-    const studentDefaultData = { id: 0, firstname: **, lastname: **, age: 0, birthDate: **, country: **, city: ** }
+    const studentDefaultData = { id: 0, firstname: ??, lastname: ??, age: 0, birthDate: ??, country: ??, city: ?? }
     xonst [student, setStudent] = useState(studentDefaultData);
     // functionconponent that returns table header
     const TableHeader = () => {
