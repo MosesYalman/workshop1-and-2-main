@@ -14,8 +14,8 @@ export default function DataTable() {
     const [studentList] = useState(initialData);
     // showDetails state for displaying student details with a boolean,the button onclick function displayData returns a true value and the properties
     const [showDetails, setShowDetails] =useState(false);
-    const studentDefaultData = { id: 0, firstname: ??, lastname: ??, age: 0, birthDate: ??, country: ??, city: ?? }
-    xonst [student, setStudent] = useState(studentDefaultData);
+    const studentDefaultData = { id: 0, firstname: "", lastname: "", age: 0, birthDate: "", country: "", city: "" }
+    const [student, setStudent] = useState(studentDefaultData);
     // functionconponent that returns table header
     const TableHeader = () => {
         return (
@@ -53,7 +53,30 @@ export default function DataTable() {
 
 
     // functionconponent action 
+    const TableAction = ({ student }) => {
+        const displayData = () => {
+            setShowDetails(true);
+            setStudent(student);
+        };
+        return <button type="button" classname="btn btn-primary" onClick={displayData} >Details</button>
+    }
 
+    const ShowStudentDetails = () => {
+        const { id, firstname, lastname, country, city, birthDate } = student;
+        return (
+            <>
+            {showDetails &&
+            <div className="card-body">
+                <div className="card-header bg-info text-dark">
+                    student info
+                </div>
+                <div className="card-body">
+                    <h4 className=""
+                </div>
+            </div></>
+        )
+    }
 
     // functionconponent 
+
 }
