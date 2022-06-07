@@ -71,12 +71,33 @@ export default function DataTable() {
                     student info
                 </div>
                 <div className="card-body">
-                    <h4 className=""
+                    <h4 className="card-title"> {country}: {city}</h4>
+                    <p className="card-text">Id: {id}</p>
+                    <p className="card-text">Name: {firstName} {lastName}</p>
+                    <p className="card-text">BirthDate: {birthDate}</p>
                 </div>
-            </div></>
+                <div className="card-footer">
+                    <button type="button" className="btn btn-info" onClick={() => { setShowDetails(false)}}
+                </div>
+            </div>
+                }
+            </>
         )
     }
 
     // functionconponent 
+    const Table = ({ children }) => <table className="table table-striped">{children}</table>
+
+    return (
+        <div className="container">
+            <h3>Student List</h3>
+            <Table>
+                <TableHeader />
+                <TableRow studentList={studentList} />
+            </Table>
+            <br />
+            <ShowStudentDetails />
+        </div>
+    );
 
 }
