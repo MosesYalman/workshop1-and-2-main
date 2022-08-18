@@ -62,28 +62,29 @@ export default function DataTable() {
     }
 
     const ShowStudentDetails = () => {
-        const { id, firstname, lastname, country, city, birthDate } = student;
+        const { id, firstName, lastName, country, city, birthDate } = student;
         return (
             <>
-            {showDetails &&
-            <div className="card-body">
-                <div className="card-header bg-info text-dark">
-                    student info
-                </div>
-                <div className="card-body">
-                    <h4 className="card-title"> {country}: {city}</h4>
-                    <p className="card-text">Id: {id}</p>
-                    <p className="card-text">Name: {firstName} {lastName}</p>
-                    <p className="card-text">BirthDate: {birthDate}</p>
-                </div>
-                <div className="card-footer">
-                    <button type="button" className="btn btn-info" onClick={() => { setShowDetails(false)}}
-                </div>
-            </div>
+                {showDetails &&
+                    <div className="card" style={{ width: '400px' }} >
+                        <div className="card-header bg-info text-white">
+                            Student Information
+                        </div>
+                        <div className="card-body">
+                            <h5 className="card-title"> {country}: {city}</h5>
+                            <p className="card-text">ID: {id}</p>
+                            <p className="card-text">Name: {firstName} {lastName}</p>
+                            <p className="card-text">BirthDate: {birthDate}</p>
+                        </div>
+                        <div className="card-footer">
+                            <button type="button" className="btn btn-info" onClick={() => { setShowDetails(false); setStudent(studentDefaultData) }}>Hide info</button>
+                        </div>
+                    </div >
                 }
             </>
         )
     }
+        
 
     // functionconponent 
     const Table = ({ children }) => <table className="table table-striped">{children}</table>
@@ -99,5 +100,4 @@ export default function DataTable() {
             <ShowStudentDetails />
         </div>
     );
-
 }
